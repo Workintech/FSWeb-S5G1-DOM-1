@@ -161,12 +161,12 @@ describe('img sources', () => {
     expect(screen.getByAltText(/Bir Şirket Sitesi logo/))
       .toHaveAttribute('src', 'http://localhost:9000/img/logo.png')
   })
-  test('[10] call to action img has the correct src', () => {
-    expect(screen.getByAltText('Image of a code snippet'))
+  test('[10] cta img src si doğru', () => {
+    expect(screen.getByAltText(/Bir kod parçası resmi/))
       .toHaveAttribute('src', 'http://localhost:9000/img/cta.png')
   })
   test('[11] ortadaki img doğru src ye sahip', () => {
-    expect(screen.getByAltText(/Bir kod parçası resmi/))
+    expect(screen.getByAltText(/Ekran boyunca bir kod parçası resmi/))
       .toHaveAttribute('src', 'http://localhost:9000/img/accent.png')
   })
 })
