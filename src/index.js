@@ -43,3 +43,42 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+
+const menu_a = document.querySelectorAll('header a');
+menu_a.forEach((a,i)=>{
+  menu_a[i].textContent = siteContent['nav'][`nav-item-${i+1}`]
+  a.classList.add('italic')
+})
+
+const logo = document.getElementById('logo-img');
+logo.setAttribute('src',siteContent.images["logo-img"]);
+
+const header = document.querySelector(".cta-text h1");
+header.textContent = siteContent.cta.h1;
+
+const button = document.querySelector(".cta-text button");
+button.textContent = siteContent.cta.button;
+
+const cta_img = document.getElementById('cta-img');
+cta_img.setAttribute('src',siteContent.images["cta-img"]);
+
+const mainTextHeaders = document.querySelectorAll(".main-content .text-content");
+mainTextHeaders.forEach((e,i)=>{
+  e.querySelector("h4").textContent = siteContent["ana-içerik"][Object.keys(siteContent["ana-içerik"])[2*i]]
+  e.querySelector("p").textContent = siteContent["ana-içerik"][Object.keys(siteContent["ana-içerik"])[2*i+1]]
+})
+
+const middle_img = document.getElementById('middle-img');
+middle_img.setAttribute('src',siteContent.images["accent-img"])
+
+const contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = siteContent.iletisim["iletişim-h4"];
+
+const contactP = document.querySelectorAll('.contact p');
+contactP.forEach((e,i)=>{
+  e.textContent = siteContent.iletisim[Object.keys(siteContent["iletisim"])[i+1]]
+})
+
+const footer = document.querySelector('footer a');
+footer.textContent = siteContent.footer.copyright;
+footer.classList.add("bold");
