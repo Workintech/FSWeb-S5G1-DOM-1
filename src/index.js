@@ -41,5 +41,23 @@ const siteContent = { // BU NESNEYİ DEĞİŞTİRMEYİN
 
 console.log('Proje açıldı!')
 
+//Menü çözüm 1
+const baslikListe = document.querySelectorAll("nav a");
+console.log("Başlıktaki linklerin listesi", baslikListe);
+//baslikListe[0].textContent = siteContent.nav["nav-item-1"];
+//baslikListe[1].textContent = siteContent.nav["nav-item-2"];
+//baslikListe[2].textContent = siteContent.nav["nav-item-3"];
+//baslikListe[3].textContent = siteContent.nav["nav-item-4"];
+//baslikListe[4].textContent = siteContent.nav["nav-item-5"];
+//baslikListe[5].textContent = siteContent.nav["nav-item-6"];
 
-/* Kodlar Buradan aşağıya */
+//Menü çözüm 2
+//for(let i = 1; i <= baslikListe.length; i++){
+//  baslikListe[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
+//}
+
+//Menü çözüm 3
+[...baslikListe].map((element, index) => {
+  baslikListe[index].textContent = siteContent.nav[`nav-item-${index + 1}`]
+  baslikListe[index].setAttribute("class", "italic");
+})
