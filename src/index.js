@@ -43,3 +43,53 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+const baslikListesi = document.querySelectorAll("nav a");
+for(let i=0 ; i <baslikListesi.length ; i++)
+{
+  baslikListesi[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+  baslikListesi[i].setAttribute("class","italic");
+}
+
+const resim = document.querySelector("#logo-img");
+resim.src = siteContent.images["logo-img"];
+
+const bslk = document.querySelector(".cta-text h1");
+bslk.textContent = siteContent.cta.h1;
+
+const btn = document.querySelector(".cta-text button");
+btn.textContent = siteContent.cta.button;
+
+const rsm = document.querySelector("#cta-img");
+rsm.src = siteContent.images["cta-img"];
+
+const h4TopContent = document.querySelectorAll(".top-content h4");
+h4TopContent[0].textContent = siteContent["ana-içerik"]["özellikler-h4"];
+h4TopContent[1].textContent = siteContent["ana-içerik"]["hakkımızda-h4"];
+
+const pTopContent = document.querySelectorAll(".top-content p");
+pTopContent[0].textContent = siteContent["ana-içerik"]["özellikler-içerik"];
+pTopContent[1].textContent = siteContent["ana-içerik"]["hakkımızda-içerik"];
+
+const middleRsm = document.querySelector("#middle-img");
+middleRsm.src = siteContent.images["accent-img"];
+
+const h4Bottom = document.querySelectorAll(".bottom-content h4");
+h4Bottom[0].textContent = siteContent["ana-içerik"]["servisler-h4"];
+h4Bottom[1].textContent = siteContent["ana-içerik"]["ürünler-h4"];
+h4Bottom[2].textContent = siteContent["ana-içerik"]["vizyon-h4"];
+
+const pBottom = document.querySelectorAll(".bottom-content p");
+pBottom[0].textContent = siteContent["ana-içerik"]["servisler-içeriği"];
+pBottom[1].textContent = siteContent["ana-içerik"]["ürünler-içeriği"];
+pBottom[2].textContent = siteContent["ana-içerik"]["vizyon-içeriği"];
+
+document.querySelector(".contact h4").textContent = siteContent["iletisim"]["iletişim-h4"];
+
+const pContact = document.querySelectorAll(".contact p");
+pContact[0].textContent = siteContent["iletisim"]["adres"];
+pContact[1].textContent = siteContent["iletisim"]["telefon"];
+pContact[2].textContent = siteContent["iletisim"]["email"];
+
+const foot = document.querySelector("footer a");
+foot.textContent = siteContent["footer"]["copyright"];
+foot.classList.add("bold");
